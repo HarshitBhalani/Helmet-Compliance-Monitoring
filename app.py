@@ -1,5 +1,6 @@
 import streamlit as st
-import tensorflow as tf
+# import tensorflow as tf
+import tflite_runtime.interpreter as tflite
 import cv2
 import numpy as np
 from PIL import Image
@@ -23,10 +24,10 @@ def convert_h5_to_tflite():
     """Convert H5 model to TensorFlow Lite format - Run this once"""
     try:
         # Load the .h5 model
-        model = tf.keras.models.load_model("model.h5")
+        model = tflite.keras.models.load_model("model.h5")
         
         # Convert the model to TensorFlow Lite format
-        converter = tf.lite.TFLiteConverter.from_keras_model(model)
+        converter = tflite.lite.TFLiteConverter.from_keras_model(model)
         tflite_model = converter.convert()
         
         # Save the .tflite model
@@ -51,7 +52,7 @@ def load_model():
                 return None
         
         # Load the TensorFlow Lite model
-        interpreter = tf.lite.Interpreter(model_path='model.tflite')
+        interpreter = tflite.lite.Interpreter(model_path='model.tflite')
         interpreter.allocate_tensors()
         
         return interpreter
