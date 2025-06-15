@@ -201,16 +201,17 @@ Immediate Actions Required:
 ## 🏗️ Project Structure
 
 ```
-Helmet-Compliance-Monitoring/
+helmet_streamlit_app/
+├── model/                   # Model directory
+│   ├── model.json          # Model architecture in JSON format
+│   ├── metadata.json       # Model metadata and configuration
+│   └── weights.bin         # Model weights in binary format
 ├── app.py                  # Main Streamlit application
 ├── requirements.txt        # Python dependencies
 ├── labels.txt             # Class labels for model
 ├── README.md              # Project documentation
 ├── .gitignore            # Git exclusion rules
-├── model.h5              # AI model (not included - see setup)
-└── sample_images/        # Demo images (optional)
-    ├── helmet_example.jpg
-    └── no_helmet_example.jpg
+└── model.h5              # Complete Keras/TensorFlow model file
 ```
 
 ## 🔒 Security & Privacy
@@ -288,7 +289,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Getting Help
 - **Issues**: Report bugs via [GitHub Issues](https://github.com/HarshitBhalani/Helmet-Compliance-Monitoring/issues)
 - **Discussions**: Join project discussions
-- **Email**: [Your contact email]
+- **Email**: [harshitbhalani187@gmail.com]
 
 ### FAQ
 
