@@ -52,7 +52,9 @@ def load_model():
                 return None
         
         # Load the TensorFlow Lite model
-        interpreter = tflite.lite.Interpreter(model_path='model.tflite')
+        # interpreter = tflite.lite.Interpreter(model_path='model.tflite')
+        interpreter = tflite.Interpreter(model_path="model.tflite")
+
         interpreter.allocate_tensors()
         
         return interpreter
