@@ -386,7 +386,8 @@ def main():
                 
                 with col1:
                     st.subheader("📸 Live Camera Feed")
-                    st.image(image, use_container_width=True)
+                    #st.image(image, use_container_width=True)
+                    st.image(image, width=700)  # You can adjust width to suit your layout
                     st.caption(f"Size: {image.size[0]}x{image.size[1]} pixels")
                 
                 # CRITICAL FIX: Proper image preprocessing for camera
